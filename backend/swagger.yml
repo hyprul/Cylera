@@ -32,13 +32,13 @@ paths:
                   type: "number"
                 timestamp:
                   type: "number"  
-  /devices/{deviceId}:
+  /devices/{device_uuid}:
     get:
       operationId: "devices.getdevice"
       summary: Gets a device by ID.
       parameters:
         - in: path
-          name: deviceId
+          name: device_uuid
           type: string
           required: true
           description: ID of the device to get.

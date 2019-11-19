@@ -69,5 +69,5 @@ def read():
     return [DEVICES_HASH[key] for key in DEVICES_HASH.keys()]
 
 
-def getdevice(deviceId):
-    return DEVICES_HASH[deviceId]
+def getdevice(device_uuid):
+    return DEVICES_HASH[device_uuid]
