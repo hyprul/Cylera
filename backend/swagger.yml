@@ -31,24 +31,56 @@ paths:
                 bytes_ts:
                   type: "number"
                 timestamp:
-                  type: "number"       
+                  type: "number"  
   /devices/{deviceId}:
     get:
-      tags:
-        - Users
-      summary: Gets a user by ID.
-      description: >
-        A detailed description of the operation.
-        Use markdown for rich text representation,
-        such as **bold**, *italic*, and [links](https://swagger.io).
-      operationId: devices.getdevice
+      operationId: "devices.getdevice"
+      summary: Gets a device by ID.
       parameters:
-        - name: deviceId
-          in: path
-          description: Device ID
+        - in: path
+          name: deviceId
+          type: string
           required: true
-          schema:
-            type: string
+          description: ID of the device to get.
       responses:
-        '200':
-          description: Successful operation
+        200:
+          description: "Successful read devices list operation"
+          schema:
+            type: "array"
+            items:
+              properties:
+                bytes_fs:
+                  type: "number"
+                bytes_ts:
+                  type: "number"
+                timestamp:
+                  type: "number"  
+    # /devices/{deviceId}:
+    # get:
+    #   operationId: "devices.getdevice"
+    #   summary: Gets a user by ID.
+    #   parameters:
+    #     - in: path
+    #       name: deviceId
+    #       required: true
+    #       description: Numeric ID of the user to get.
+  # /devices/{deviceId}:
+  #   get:
+  #     tags:
+  #       - Users
+  #     summary: Gets a user by ID.
+  #     description: >
+  #       A detailed description of the operation.
+  #       Use markdown for rich text representation,
+  #       such as **bold**, *italic*, and [links](https://swagger.io).
+  #     operationId: devices.getdevice
+  #     parameters:
+  #       - name: deviceId
+  #         in: path
+  #         description: Device ID
+  #         required: true
+  #         schema:
+  #           type: string
+  #     responses:
+  #       '200':
+  #         description: Successful operation
