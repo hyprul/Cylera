@@ -35,6 +35,8 @@ paths:
   /devices/{device_uuid}:
     get:
       operationId: "devices.getdevice"
+      tags:
+        - "Devices"
       summary: Gets a device by ID.
       parameters:
         - in: path
