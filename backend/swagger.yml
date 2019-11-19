@@ -12,23 +12,43 @@ basePath: "/api"
 
 # Paths supported by the server application
 paths:
-  /people:
+  /devices:
     get:
-      operationId: "people.read"
+      operationId: "devices.read"
       tags:
-        - "People"
-      summary: "The people data structure supported by the server application"
-      description: "Read the list of people"
+        - "Devices"
+      summary: "The devices data structure supported by the server application"
+      description: "Read the list of devices"
       responses:
         200:
-          description: "Successful read people list operation"
+          description: "Successful read devices list operation"
           schema:
             type: "array"
             items:
               properties:
-                fname:
-                  type: "string"
-                lname:
-                  type: "string"
+                bytes_fs:
+                  type: "number"
+                bytes_ts:
+                  type: "number"
                 timestamp:
-                  type: "string"
+                  type: "number"       
+  /devices/{deviceId}:
+    get:
+      tags:
+        - Users
+      summary: Gets a user by ID.
+      description: >
+        A detailed description of the operation.
+        Use markdown for rich text representation,
+        such as **bold**, *italic*, and [links](https://swagger.io).
+      operationId: devices.getdevice
+      parameters:
+        - name: deviceId
+          in: path
+          description: Device ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation

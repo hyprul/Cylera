@@ -39,25 +39,25 @@ for device in BANDWIDTHS:
 
 print(list(DEVICES_HASH.items())[0])
 # Data to serve with our API
-PEOPLE = {
-    "Farrell": {
-        "fname": "Doug",
-        "lname": "Farrell",
-        "timestamp": get_timestamp()
-    },
-    "Brockman": {
-        "fname": "Kent",
-        "lname": "Brockman",
-        "timestamp": get_timestamp()
-    },
-    "Easter": {
-        "fname": "Bunny",
-        "lname": "Easter",
-        "timestamp": get_timestamp()
-    }
-}
+# PEOPLE = {
+#     "Farrell": {
+#         "fname": "Doug",
+#         "lname": "Farrell",
+#         "timestamp": get_timestamp()
+#     },
+#     "Brockman": {
+#         "fname": "Kent",
+#         "lname": "Brockman",
+#         "timestamp": get_timestamp()
+#     },
+#     "Easter": {
+#         "fname": "Bunny",
+#         "lname": "Easter",
+#         "timestamp": get_timestamp()
+#     }
+# }
 
-# Create a handler for our read (GET) people
+# Create a handler for our read (GET) devices
 def read():
     """
     This function responds to a request for /api/people
@@ -65,5 +65,9 @@ def read():
 
     :return:        sorted list of people
     """
-    # Create the list of people from our data
-    return [PEOPLE[key] for key in sorted(PEOPLE.keys())]
+    # Create the list of devices from our data
+    return [DEVICES_HASH[key] for key in DEVICES_HASH.keys()]
+
+
+def getdevice(deviceid):
+    return DEVICES_HASH[deviceid]
