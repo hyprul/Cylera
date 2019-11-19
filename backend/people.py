@@ -1,8 +1,43 @@
 from datetime import datetime
+from bandwidths import BANDWIDTHS
+import json
+import copy
 
 def get_timestamp():
     return datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
 
+test_device_id = 'cf4844bc-a107-4e0a-84e1-fa04d76d388c'
+
+
+# Turns BANDWIDTHS data into dictionary sorted by device_id
+DEVICES_HASH = {}
+
+for device in BANDWIDTHS:
+
+
+    device_id = device['device_id']
+
+    if not device_id in DEVICES_HASH:
+        DEVICES_HASH[device_id] = []
+
+    device_data = {}
+
+    for k in device.keys():
+        if k == 'device_id': continue
+        device_data[k] = device[k]
+    
+    DEVICES_HASH[device_id].append(device_data)
+    
+    #print(DEVICES_HASH[device['device_id']])
+
+
+#print(DEVICES_HASH[test_device_id])
+
+#print(DEVICES_HASH[device_id])
+#print(DEVICES_HASH.keys())
+#print(DEVICES_HASH)
+
+print(list(DEVICES_HASH.items())[0])
 # Data to serve with our API
 PEOPLE = {
     "Farrell": {
