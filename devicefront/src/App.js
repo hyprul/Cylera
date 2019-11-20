@@ -7,12 +7,31 @@ class App extends Component {
         super();
         this.state = {
             chartData: {},
-            serverData: {}
+            serverData: {
+                labels: [],
+                datasets: [
+                    {
+                        data: [],
+                        label: "From Server",
+                        borderColor: "#3e95cd",
+                        fill: false
+                    },
+                    {
+                        data: [],
+                        label: "To Server",
+                        borderColor: "#c45850",
+                        fill: false
+                    }
+                ]
+            }
         };
     }
 
     componentWillMount() {
         this.getChartData();
+        // fetch('http://localhost:5000/api/devices/cf4844bc-a107-4e0a-84e1-fa04d76d388c')
+        //     .then(response => response.json())
+        //     .then(data => this.processData(data))
     }
 
     componentDidMount() {
@@ -56,7 +75,7 @@ class App extends Component {
                 ]
             }
         })
-        
+
         console.log(this.state.serverData)
     }
 

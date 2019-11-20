@@ -11,12 +11,20 @@ export default class Chart extends Component {
         }
     }
 
-    static defaultProps = {
-        displayTitle: true,
-        displayLegend: true,
-        legendPosition: 'right',
-        location: 'City'
+    componentWillReceiveProps(newProps) {
+        this.setState({serverData: newProps.serverData});
     }
+
+    shouldComponentUpdate(newProps) {
+        return this.state.serverData !== newProps.serverData;
+    }
+
+    // static defaultProps = {
+    //     displayTitle: true,
+    //     // displayLegend: true,
+    //     // legendPosition: 'right',
+    //     // location: 'City'
+    // }
 
     render() {
         console.log(this.state.serverData)
