@@ -70,4 +70,5 @@ def read():
 
 
 def getdevice(device_uuid):
+    print(len(DEVICES_HASH[device_uuid]))
     return DEVICES_HASH[device_uuid]
