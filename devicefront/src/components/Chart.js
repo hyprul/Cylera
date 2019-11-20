@@ -25,7 +25,7 @@ export default class Chart extends Component {
                     options={{
                         title: {
                             display: this.props.displayTitle,
-                            text: 'Largest Cities In '+this.props.location,
+                            text: 'Largest Cities In ' + this.props.location,
                             fontSize: 25
                         },
                         legend: {

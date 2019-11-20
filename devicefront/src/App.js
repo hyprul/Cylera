@@ -6,7 +6,8 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            chartData: {}
+            chartData: {},
+            serverData: {}
         };
     }
 
@@ -17,7 +18,17 @@ class App extends Component {
     componentDidMount() {
         fetch('http://localhost:5000/api/devices/cf4844bc-a107-4e0a-84e1-fa04d76d388c')
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => this.processData(data))
+    }
+
+    processData(dataArray) {
+        let fromserver = [];
+        let toserver = [];
+        let timestamps = [];
+        console.log(dataArray)
+        for (let i = 0; i < dataArray.length; i++) {
+            console.log("bytes_fs " + dataArray[i]['bytes_fs'] + " bytes_ts " + dataArray[i]['bytes_ts'] + " timestamp: " + dataArray[i]['timestamp'])
+        }
     }
 
     getChartData() {
