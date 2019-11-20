@@ -6,7 +6,8 @@ export default class Chart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            chartData: props.chartData
+            chartData: props.chartData,
+            serverData: props.serverData
         }
     }
 
@@ -18,22 +19,15 @@ export default class Chart extends Component {
     }
 
     render() {
+        console.log(this.state.serverData)
         return (
             <div className="chart">
-                <Bar
-                    data={this.state.chartData}
+                <Line
+                    data={this.state.serverData}
                     options={{
                         title: {
-                            display: this.props.displayTitle,
-                            text: 'Largest Cities In ' + this.props.location,
-                            fontSize: 25
-                        },
-                        legend: {
-                            display: this.props.displayLegend,
-                            position: this.props.legendPosition,
-                            labels: {
-                                fontColor: '#000'
-                            }
+                            display: true,
+                            text: 'Server Data'
                         }
                     }}
                 />
