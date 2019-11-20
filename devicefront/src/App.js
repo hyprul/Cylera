@@ -14,6 +14,12 @@ class App extends Component {
         this.getChartData();
     }
 
+    componentDidMount() {
+        fetch('http://localhost:5000/api/devices/cf4844bc-a107-4e0a-84e1-fa04d76d388c')
+            .then(response => response.json())
+            .then(data => console.log(data))
+    }
+
     getChartData() {
         //Ajax Calls Here
         this.setState({
@@ -42,7 +48,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Chart chartData={this.state.chartData} legendPosition="bottom" />
+                <Chart chartData={this.state.chartData} location="HNNGGHHH" legendPosition="bottom" />
             </div>
         );
     }
