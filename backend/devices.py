@@ -69,6 +69,6 @@ def read():
     return [DEVICES_HASH[key] for key in DEVICES_HASH.keys()]
 
 
-def getdevice(device_uuid):
+def getdevice(device_uuid, end_time, window_time, num_windows):
     print(len(DEVICES_HASH[device_uuid]))
     return DEVICES_HASH[device_uuid]

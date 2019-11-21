@@ -48,16 +48,19 @@ paths:
           name: end_time
           type: integer
           required: false
+          default: 1600000000
           description: epoch timestamp of the last time we want to return, default now
         - in: query
           name: window_time
           type: integer
           required: false
+          default: 60
           description: window in seconds, default 60 seconds
         - in: query
           name: num_windows
           type: integer
           required: false
+          default: 10
           description: number of windows i.e., data points, to return, default 10
       responses:
         200:
