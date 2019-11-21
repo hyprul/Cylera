@@ -82,7 +82,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Chart serverData={this.state.serverData} location="HNNGGHHH" legendPosition="bottom" />
+                <Chart serverData={this.state.serverData} device={this.state.deviceData.device_uuid} legendPosition="bottom" />
             </div>
         );
     }

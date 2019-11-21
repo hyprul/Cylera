@@ -6,7 +6,8 @@ export default class Chart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            serverData: props.serverData
+            serverData: props.serverData,
+            deviceUUID: props.device
         }
     }
 
@@ -33,7 +34,7 @@ export default class Chart extends Component {
                     options={{
                         title: {
                             display: true,
-                            text: 'Server Data'
+                            text: `Server Data for Device UUID: ${this.state.deviceUUID}`
                         }
                     }}
                 />
