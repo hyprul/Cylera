@@ -69,7 +69,7 @@ def read():
     #return [DEVICES_HASH[key] for key in DEVICES_HASH.keys()]
     #print(DEVICES_HASH.keys())
     #return json.dumps(DEVICES_HASH)
-    return json.dumps(list(DEVICES_HASH.keys()))
+    return list(DEVICES_HASH.keys())
 
 
 def getdevice(device_uuid, end_time, window_time, num_windows):
