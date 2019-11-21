@@ -22,12 +22,19 @@ class App extends Component {
                         fill: false
                     }
                 ]
+            },
+
+            deviceData: {
+                device_uuid: 'cf4844bc-a107-4e0a-84e1-fa04d76d388c',
+                end_time: 1600000000, 
+                window_time: 60,
+                num_windows: 10
             }
         };
     }
 
     componentDidMount() {
-        fetch('http://localhost:5000/api/devices/cf4844bc-a107-4e0a-84e1-fa04d76d388c')
+        fetch(`http://localhost:5000/api/devices/${this.state.deviceData.device_uuid}`)
             .then(response => response.json())
             .then(data => this.processData(data))
     }
