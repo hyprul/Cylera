@@ -6,13 +6,12 @@ export default class Chart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            chartData: props.chartData,
             serverData: props.serverData
         }
     }
 
     componentWillReceiveProps(newProps) {
-        this.setState({serverData: newProps.serverData});
+        this.setState({ serverData: newProps.serverData });
     }
 
     shouldComponentUpdate(newProps) {
@@ -27,7 +26,6 @@ export default class Chart extends Component {
     // }
 
     render() {
-        console.log(this.state.serverData)
         return (
             <div className="chart">
                 <Line

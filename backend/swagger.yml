@@ -44,6 +44,21 @@ paths:
           type: string
           required: true
           description: ID of the device to get.
+        - in: query
+          name: end_time
+          type: integer
+          required: false
+          description: epoch timestamp of the last time we want to return, default now
+        - in: query
+          name: window_time
+          type: integer
+          required: false
+          description: window in seconds, default 60 seconds
+        - in: query
+          name: num_windows
+          type: integer
+          required: false
+          description: number of windows i.e., data points, to return, default 10
       responses:
         200:
           description: "Successful read devices list operation"
