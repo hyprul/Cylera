@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 
 export default class Chart extends Component {
     constructor(props) {
@@ -34,7 +34,7 @@ export default class Chart extends Component {
                     options={{
                         title: {
                             display: true,
-                            text: `Server Data for Device UUID: ${this.state.deviceUUID}`
+                            text: `Server Data for Device UUID: ${this.state.deviceUUID}`,
                         }
                     }}
                 />
