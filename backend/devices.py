@@ -37,7 +37,7 @@ for device in BANDWIDTHS:
 #print(DEVICES_HASH.keys())
 #print(DEVICES_HASH)
 
-print(list(DEVICES_HASH.items())[0])
+#print(list(DEVICES_HASH.items())[0])
 # Data to serve with our API
 # PEOPLE = {
 #     "Farrell": {
@@ -66,9 +66,12 @@ def read():
     :return:        sorted list of people
     """
     # Create the list of devices from our data
-    return [DEVICES_HASH[key] for key in DEVICES_HASH.keys()]
+    #return [DEVICES_HASH[key] for key in DEVICES_HASH.keys()]
+    return json.dumps(DEVICES_HASH)
+    #return [DEVICES_HASH.keys()]
 
 
 def getdevice(device_uuid, end_time, window_time, num_windows):
-    print(len(DEVICES_HASH[device_uuid]))
+    print('Device UUID: '+ device_uuid+ '; end_time: '+ str(end_time)+'; window_time: '+ str(window_time) +'; num_windows: '+ str(num_windows))
+    #print(len(DEVICES_HASH[device_uuid]))
     return DEVICES_HASH[device_uuid]
