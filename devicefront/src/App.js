@@ -41,23 +41,6 @@ class App extends Component {
             .then(data => this.processData(data))
     }
 
-    resetThenSet = (id, key) => {
-        let temp = JSON.parse(JSON.stringify(this.state[key]));
-        temp.forEach(item => item.selected = false);
-        temp[id].selected = true;
-        this.setState({
-            [key]: temp
-        });
-    }
-
-    toggleSelected = (id, key) => {
-        let temp = JSON.parse(JSON.stringify(this.state[key]));
-        temp[id].selected = !temp[id].selected;
-        this.setState({
-            [key]: temp
-        });
-    }
-
     processData(dataArray) {
         let fromserver = [];
         let toserver = [];
@@ -94,7 +77,7 @@ class App extends Component {
             }
         })
 
-        console.log(this.state.serverData)
+        //console.log(this.state.serverData)
     }
 
 
