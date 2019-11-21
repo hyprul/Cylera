@@ -1,12 +1,14 @@
-from datetime import datetime
+# from datetime import datetime
 from bandwidths import BANDWIDTHS
 import json
 import copy
+import time
 
-def get_timestamp():
-    return datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
+# def get_timestamp():
+#     return datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
 
 test_device_id = 'cf4844bc-a107-4e0a-84e1-fa04d76d388c'
+#print(time.time())
 
 
 # Turns BANDWIDTHS data into dictionary sorted by device_id
@@ -69,6 +71,7 @@ def read():
     #return [DEVICES_HASH[key] for key in DEVICES_HASH.keys()]
     #print(DEVICES_HASH.keys())
     #return json.dumps(DEVICES_HASH)
+    print(len(DEVICES_HASH.keys()))
     return list(DEVICES_HASH.keys())
 
 
