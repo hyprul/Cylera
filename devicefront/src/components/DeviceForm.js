@@ -16,14 +16,14 @@ export default function DeviceForm(props) {
             </datalist>
 
 
-            <label htmlFor="end_time" defaultValue='1600000000'>End Time</label>
-            <input id="end_time" name="end_time" type="number" />
+            <label htmlFor="end_time" >End Time</label>
+            <input id="end_time" name="end_time" type="number" defaultValue='1600000000' />
 
-            <label htmlFor="window_time" defaultValue='60'>Window Time</label>
-            <input id="window_time" name="window_time" type="number" />
+            <label htmlFor="window_time" >Window Time</label>
+            <input id="window_time" name="window_time" type="number" defaultValue='60' />
 
-            <label htmlFor="num_windows" defaultValue='10'>Number Windows</label>
-            <input id="num_windows" name="num_windows" type="number" />
+            <label htmlFor="num_windows" >Number Windows</label>
+            <input id="num_windows" name="num_windows" type="number" defaultValue='10' />
 
             <button>Request data!</button>
 
