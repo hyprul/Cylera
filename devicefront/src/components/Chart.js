@@ -3,21 +3,24 @@ import React, { Component } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
 
 export default class Chart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            serverData: props.serverData,
-            deviceUUID: props.device
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         serverData: props.serverData,
+    //         deviceUUID: props.device
+    //     }
+    // }
 
-    componentWillReceiveProps(newProps) {
-        this.setState({ serverData: newProps.serverData });
-    }
+    // componentWillReceiveProps(newProps) {
+    //     this.setState({
+    //         serverData: newProps.serverData,
+    //         deviceUUID: this.props.device
+    //     });
+    // }
 
-    shouldComponentUpdate(newProps) {
-        return this.state.serverData !== newProps.serverData;
-    }
+    // shouldComponentUpdate(newProps) {
+    //     return this.state.serverData !== newProps.serverData;
+    // }
 
     // static defaultProps = {
     //     displayTitle: true,
@@ -30,11 +33,11 @@ export default class Chart extends Component {
         return (
             <div className="chart">
                 <Line
-                    data={this.state.serverData}
+                    data={this.props.serverData}
                     options={{
                         title: {
                             display: true,
-                            text: `Server Data for Device UUID: ${this.state.deviceUUID}`,
+                            text: `Server Data for Device UUID: ${this.props.device}`,
                         }
                     }}
                 />
