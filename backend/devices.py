@@ -33,32 +33,6 @@ for device in BANDWIDTHS:
     # print(DEVICES_HASH[device['device_id']])
 
 
-# print(DEVICES_HASH[test_device_id])
-
-# print(DEVICES_HASH[device_id])
-# print(DEVICES_HASH.keys())
-# print(DEVICES_HASH)
-
-# print(list(DEVICES_HASH.items())[0])
-# Data to serve with our API
-# PEOPLE = {
-#     "Farrell": {
-#         "fname": "Doug",
-#         "lname": "Farrell",
-#         "timestamp": get_timestamp()
-#     },
-#     "Brockman": {
-#         "fname": "Kent",
-#         "lname": "Brockman",
-#         "timestamp": get_timestamp()
-#     },
-#     "Easter": {
-#         "fname": "Bunny",
-#         "lname": "Easter",
-#         "timestamp": get_timestamp()
-#     }
-# }
-
 # Create a handler for our read (GET) devices
 def read():
     """

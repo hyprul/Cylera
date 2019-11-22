@@ -16,7 +16,6 @@ export default function DeviceForm(props) {
             </datalist>
 
 
-
             <label htmlFor="end_time" defaultValue='1600000000'>End Time</label>
             <input id="end_time" name="end_time" type="number" />
 
