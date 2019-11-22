@@ -77,13 +77,50 @@ class App extends Component {
         let fromserver = [];
         let toserver = [];
         let timestamps = [];
-        console.log(dataArray)
-        for (let i = 0; i < dataArray.length; i++) {
-            //console.log("bytes_fs " + dataArray[i]['bytes_fs'] + " bytes_ts " + dataArray[i]['bytes_ts'] + " timestamp: " + dataArray[i]['timestamp'])
-            fromserver.push(dataArray[i]['bytes_fs']);
-            toserver.push(dataArray[i]['bytes_ts']);
-            timestamps.push(dataArray[i]['timestamp']);
+        //console.log(dataArray)
+
+
+        // for (let i = 0; i < dataArray.length; i++) {
+        //     //console.log("bytes_fs " + dataArray[i]['bytes_fs'] + " bytes_ts " + dataArray[i]['bytes_ts'] + " timestamp: " + dataArray[i]['timestamp'])
+        //     fromserver.push(dataArray[i]['bytes_fs']);
+        //     toserver.push(dataArray[i]['bytes_ts']);
+        //     timestamps.push(dataArray[i]['timestamp']);
+        // }
+
+        //Chunking Data into num_windows
+        const chunked_data = [];
+        let index = 0;
+        let size = Math.trunc(dataArray.length / this.state.deviceData.num_windows);
+        //console.log(size)
+        while (index < dataArray.length) {
+            chunked_data.push(dataArray.slice(index, size + index));
+            //console.log(chunked_data)
+            index += size;
         }
+
+        //Summing data and pushing
+        for (let i = 0; i < chunked_data.length; i++) {
+            let sumfs = 0, sumts = 0, finaltimestamp = 0;
+
+            for (let j = 0; j < chunked_data[i].length; j++) {
+                if (j == chunked_data[i].length - 1) {
+                    finaltimestamp = chunked_data[i][j].timestamp;
+                    if (finaltimestamp <= this.state.deviceData.end_time)
+                        timestamps.push(finaltimestamp)
+                }
+                sumfs += chunked_data[i][j].bytes_fs;
+                sumts += chunked_data[i][j].bytes_ts;
+            }
+
+            fromserver.push(sumfs);
+            toserver.push(sumts);
+
+        }
+
+        //console.log(chunked_data)
+
+        //console.log(chunked_data)
+
         // console.log(fromserver);
         // console.log(toserver);
         // console.log(timestamps);
