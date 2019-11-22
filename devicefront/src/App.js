@@ -56,7 +56,7 @@ class App extends Component {
         }
 
         console.log(values)
-        this.getData(values[0], 1600000000, 60, 10)
+        this.getData(values[0], values[1], values[2], values[3])
 
         this.setState({
             deviceData: {
@@ -77,7 +77,7 @@ class App extends Component {
         let fromserver = [];
         let toserver = [];
         let timestamps = [];
-        //console.log(dataArray)
+        console.log(dataArray)
         for (let i = 0; i < dataArray.length; i++) {
             //console.log("bytes_fs " + dataArray[i]['bytes_fs'] + " bytes_ts " + dataArray[i]['bytes_ts'] + " timestamp: " + dataArray[i]['timestamp'])
             fromserver.push(dataArray[i]['bytes_fs']);
