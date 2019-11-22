@@ -103,7 +103,7 @@ class App extends Component {
             let sumfs = 0, sumts = 0, finaltimestamp = 0;
 
             for (let j = 0; j < chunked_data[i].length; j++) {
-                if (j == chunked_data[i].length - 1) {
+                if (j === chunked_data[i].length - 1) {
                     finaltimestamp = chunked_data[i][j].timestamp;
                     if (finaltimestamp <= this.state.deviceData.end_time)
                         timestamps.push(finaltimestamp)

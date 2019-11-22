@@ -5,7 +5,7 @@ export default function DeviceForm(props) {
         <form onSubmit={props.handleSubmit}>
 
             <label htmlFor="device_uuid">Choose Device UUID</label>
-            <input list="device_uuids" id="device_uuid" name="device_uuid" required />
+            <input list="device_uuids" id="device_uuid" name="device_uuid" style={{ marginRight: '20px'}} required />
 
             <datalist id="device_uuids">
                 <option value="d75c54d3-e672-4580-8bd1-b39ea9c66e93" />
@@ -17,13 +17,13 @@ export default function DeviceForm(props) {
 
 
             <label htmlFor="end_time" >End Time</label>
-            <input id="end_time" name="end_time" type="number" defaultValue='1600000000' />
+            <input id="end_time" name="end_time" type="number" defaultValue='1600000000' style={{ marginRight: '20px'}}/>
 
             <label htmlFor="window_time" >Window Time</label>
-            <input id="window_time" name="window_time" type="number" defaultValue='60' />
+            <input id="window_time" name="window_time" type="number" style={{ marginRight: '20px'}} defaultValue='60' />
 
             <label htmlFor="num_windows" >Number Windows</label>
-            <input id="num_windows" name="num_windows" type="number" defaultValue='10' />
+            <input id="num_windows" name="num_windows" type="number" style={{ marginRight: '20px'}} defaultValue='10' />
 
             <button>Request data!</button>
 
