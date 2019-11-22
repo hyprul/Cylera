@@ -10,7 +10,7 @@ Start Backend Server
 
 ### Frontend
 Install all required packages using npm
-    `npm install`
+    `cd devicefront` -> `npm install`
 
 Start Frontend Client
     `npm start`
