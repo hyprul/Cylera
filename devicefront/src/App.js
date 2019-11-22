@@ -55,6 +55,7 @@ class App extends Component {
             values.push(value)
         }
 
+        console.log(values)
         this.getData(values[0], 1600000000, 60, 10)
 
         this.setState({
@@ -68,8 +69,6 @@ class App extends Component {
         //console.log("Finished getting data")
         //console.log(this.state.deviceData)
         // this.getData();
-
-
 
         // console.log(values)
     }
