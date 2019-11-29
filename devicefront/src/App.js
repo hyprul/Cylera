@@ -162,7 +162,7 @@ class App extends Component {
                     <DeviceForm handleSubmit={this.handleSubmit} />
                 </div>
 
-            </div >
+            </div>
         );
     }
 
