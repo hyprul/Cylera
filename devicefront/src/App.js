@@ -3,6 +3,8 @@ import Chart from './components/Chart';
 import DeviceForm from './components/DeviceForm'
 import './App.css';
 
+import DeviceList from './components/DeviceList';
+
 class App extends Component {
     constructor() {
         super();
@@ -31,7 +33,9 @@ class App extends Component {
                 end_time: 1600000000,
                 window_time: 60,
                 num_windows: 10
-            }
+            },
+
+            deviceList: []
 
         };
     }
@@ -41,6 +45,29 @@ class App extends Component {
         fetch(url)
             .then(response => response.json())
             .then(data => this.processData(data))
+
+        // let url2 = `http://localhost:5000/api/devices`
+        // fetch(url2)
+        //     .then(response => response.json())
+        //     // .then(data => console.log(data))
+        //     .then(data => this.setState(
+        //         {
+        //             deviceList: data
+        //         }
+        //     ))
+        //     .then(console.log(this.state.deviceList))
+
+        const request = async () => {
+            const response = await fetch('http://localhost:5000/api/devices');
+            const json = await response.json();
+            this.setState({
+                deviceList: json
+            })
+
+            //console.log(this.state.deviceList)
+        }
+
+        request();
     }
 
     componentDidMount() {
@@ -159,7 +186,12 @@ class App extends Component {
                 </div>
 
                 <div className="Form">
-                    <DeviceForm handleSubmit={this.handleSubmit} />
+                    <DeviceForm handleSubmit={this.handleSubmit} devicelist={this.state.deviceList} />
+                </div>
+
+
+                <div className="DeviceList">
+                    <DeviceList devicelist={this.state.deviceList} />
                 </div>
 
             </div>
